@@ -1,0 +1,74 @@
+#tesely-popup {
+	padding: 15px !important;
+	z-index: 999 !important;
+	position: absolute !important;
+	background-color: white !important;
+	box-shadow: 6px 6px 20px 0px rgba(0, 0, 0, 0.75) !important;
+	font: normal normal normal 14px/1 sans-serif !important;
+}
+
+#tesely-bubble {
+	height: 40px !important;
+	width: 40px !important;
+}
+
+#tesely-bubble > div {
+	border-radius: 50% !important;
+	height: 100% !important;
+	width: 100% !important;
+	animation: 0.5s linear 0s infinite normal tesely-bubble !important;
+	border: 3px solid blue !important;
+	border-top-color: red !important;
+}
+
+@keyframes tesely-bubble {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#tesely-popup .from,
+#tesely-popup .to {
+	font-size: 20px !important;
+}
+
+#tesely-popup .to {
+	font-weight: bold !important;
+}
+
+#tesely-popup .lang-from,
+#tesely-popup .lang-to {
+	opacity: 0.5 !important;
+}
+
+#tesely-popup .lang-to {
+	margin-top: 5px !important;
+}
+
+#tesely-popup table {
+	font: normal normal normal 14px/1 sans-serif !important;
+	border-spacing: 0 !important;
+}
+
+#tesely-popup td,
+#tesely-popup th {
+	padding: 3px 0 !important;
+}
+
+#tesely-popup tr td:nth-of-type(2) {
+	font-style: italic !important;
+}
+
+#tesely-popup th {
+	opacity: 0.5 !important;
+	font-weight: normal !important;
+	text-align: left !important;
+	padding-top: 20px !important;
+}
+
+#tesely-popup tr td:first-of-type {
+	padding-right: 15px !important;
+}
