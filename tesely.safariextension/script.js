@@ -26,7 +26,7 @@ function showBubble() {
 
 	placeElement(bubbleElement, firstSelectionRect, -40, -40);
 
-	document.addEventListener("click", onDocumentClicked);
+	document.addEventListener("click", hideAll);
 }
 
 function requestTranslate(content) {
@@ -52,7 +52,7 @@ function onTranslateResponse() {
 	placeElement(popupElement, selectionRect);
 	popupElement.style.display = "block";
 
-	document.addEventListener("click", onDocumentClicked);
+	document.addEventListener("click", hideAll);
 }
 
 function placeElement(element, rect, offsetx, offsety) {
@@ -145,15 +145,15 @@ function buildPopupElement() {
 
 }
 
-function onDocumentClicked() {
+function hideAll() {
 	if (typeof popupElement !== "undefined") {
 		popupElement.style.display = "none";
-		document.removeEventListener("click", onDocumentClicked);
+		document.removeEventListener("click", hideAll);
 	}
 
 	if (typeof bubbleElement !== "undefined") {
 		bubbleElement.style.display = "none";
-		document.removeEventListener("click", onDocumentClicked);
+		document.removeEventListener("click", hideAll);
 	}
 }
 
@@ -167,4 +167,8 @@ function onBubbleMousemove() {
 
 document.addEventListener("selectionchange", function(e) {
 	onSelectionChange(e);
+});
+
+window.addEventListener("blur", function(){
+	hideAll();
 });
