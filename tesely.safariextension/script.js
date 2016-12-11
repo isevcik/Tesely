@@ -56,8 +56,8 @@ function onTranslateResponse() {
 }
 
 function placeElement(element, rect, offsetx, offsety) {
-	offsetx |= 0;
-	offsety |= 0;
+	offsetx = offsetx || 0;
+	offsety = offsety || 0;
 	var bodyRect = document.body.getBoundingClientRect();
 
 	if ((Math.max(rect.left + offsetx, 0) + element.clientWidth) > bodyRect.width) {
